@@ -11,6 +11,7 @@
             {{ cake.name }}, pieces left: {{cake.pieces}} <v-btn dark v-on:click="eatCake(cake)">Eat</v-btn>
           </li>
         </ul>
+        <p>There are {{availablePiecesOfCake}} pieces of cake left.</p>
       </v-flex>
     </v-layout>
   </v-container>
@@ -28,10 +29,19 @@ export default {
       }
     },
     methods: {
-       eatCake (cake){
-         if(cake.pieces > 0)
-           cake.pieces --;
-       }
+      eatCake (cake){
+        if(cake.pieces > 0)
+          cake.pieces --;
+      }
+    },
+    computed: {
+      availablePiecesOfCake(){
+        let total = 0;
+        this.cakes.forEach(function(cake){
+          total += cake.pieces;
+        });
+        return total;
+      }
     }
 }
 </script>
