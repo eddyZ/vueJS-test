@@ -8,7 +8,7 @@
         <p>This is a cake page</p>
         <ul>
           <li v-for="cake in cakes">
-            {{ cake.name }}, pieces left: {{cake.pieces}} '<button v-on:click="eatCake(cake)">Eat</button>'
+            {{ cake.name }}, pieces left: {{cake.pieces}} <v-btn dark v-on:click="eatCake(cake)">Eat</v-btn>
           </li>
         </ul>
       </v-flex>
