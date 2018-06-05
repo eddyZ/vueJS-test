@@ -29,7 +29,8 @@ export default {
     },
     methods: {
        eatCake (cake){
-         cake.pieces --;
+         if(cake.pieces > 0)
+           cake.pieces --;
        }
     }
 }
