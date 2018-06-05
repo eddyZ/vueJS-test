@@ -8,7 +8,7 @@
         <p>This is a cake page</p>
         <ul>
           <li v-for="cake in cakes">
-            {{ cake.name }} 
+            {{ cake.name }}
           </li>
         </ul>
       </v-flex>
