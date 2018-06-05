@@ -42,6 +42,12 @@ export default {
         });
         return total;
       }
+    },
+    watch: {
+      availablePiecesOfCake (nrOfPieces) {
+        if(nrOfPieces < 6)
+          alert("Ohh, only little cake left!")
+      }
     }
 }
 </script>
