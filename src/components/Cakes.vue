@@ -8,7 +8,7 @@
         <p>This is a cake page</p>
         <ul>
           <li v-for="cake in cakes">
-            {{ cake.name }}
+            {{ cake.name }}, pieces left: {{cake.pieces}} '<button v-on:click="eatCake(cake)">Eat</button>'
           </li>
         </ul>
       </v-flex>
@@ -21,11 +21,16 @@ export default {
     data () {
       return {
         cakes: [
-          { name: 'cheese cake', price: 2 , chocolate: false },
-          { name: 'lemon tarte', price: 3, chocolate: true },
-          { name: 'chocolate cake', price:2, chocolate: true }
+          { name: 'cheese cake', pieces: 2 , chocolate: false },
+          { name: 'lemon tarte', pieces: 3, chocolate: true },
+          { name: 'chocolate cake', pieces:20, chocolate: true }
         ]
       }
+    },
+    methods: {
+       eatCake (cake){
+         cake.pieces --;
+       }
     }
 }
 </script>
