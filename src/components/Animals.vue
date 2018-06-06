@@ -11,6 +11,7 @@
                {{animal.name}}
         </li>
         </ul>
+        <v-btn dark v-on:click="addCoala()">Add Coala</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -18,7 +19,7 @@
 
 <script>
 export default {
-data () {
+  data () {
       return {
         animals: [
           { name: 'dog', size: 40 },
@@ -26,5 +27,11 @@ data () {
           { name: 'dolphin', size: 200 }
         ]
       }
-    }}
+  },
+  methods: {
+    addCoala(){
+      this.animals.push({name: 'coala', size: 30});
+    }
+  }
+}
 </script>
